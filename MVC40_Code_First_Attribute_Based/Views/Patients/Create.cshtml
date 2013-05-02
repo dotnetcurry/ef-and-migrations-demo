@@ -1,0 +1,56 @@
+﻿@model MVC40_Code_First_Attribute_Based.Models.Patient
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Patient</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PatientName)
+            @Html.ValidationMessageFor(model => model.PatientName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gendar)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Gendar)
+            @Html.ValidationMessageFor(model => model.Gendar)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Age)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DoctorId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DoctorId)
+            @Html.ValidationMessageFor(model => model.DoctorId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

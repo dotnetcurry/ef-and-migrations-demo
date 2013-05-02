@@ -1,0 +1,40 @@
+﻿@model MVC40_Code_First_Attribute_Based.Models.Doctor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Doctor</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DoctorName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DoctorName)
+            @Html.ValidationMessageFor(model => model.DoctorName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Specialization)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Specialization)
+            @Html.ValidationMessageFor(model => model.Specialization)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

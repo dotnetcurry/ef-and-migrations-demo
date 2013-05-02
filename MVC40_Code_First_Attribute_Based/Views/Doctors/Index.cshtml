@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC40_Code_First_Attribute_Based.Models.Doctor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specialization)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specialization)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DoctorId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DoctorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DoctorId })
+        </td>
+    </tr>
+}
+
+</table>
